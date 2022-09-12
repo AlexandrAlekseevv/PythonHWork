@@ -36,14 +36,22 @@ def fibonacci(number):
         fib1 = fib2
         fib2 = fib_sum
         arr.append(fib2)
-    if number>0:
-        return arr
-    else :
-        for i in range(len(arr)):
-            arr.append(arr[i]*(-1))
-        arr.append(0)
-        arr.sort()
-        return arr
+    for i in range(len(arr)):
+        arr.append(arr[i]*(-1))
+    arr.append(0)
+    arr.sort()
+    for i in range((len(arr)+1)//2,0,-2):#невнимательно прочитал условие
+
+        arr[i] = arr[i]*(-1)
+        if (number%2 !=0):
+            arr[0]= arr[0]*(-1)
+                
+    return arr
+       
+
+
+        
+    
  
 print(fibonacci(get_int('')))
 
